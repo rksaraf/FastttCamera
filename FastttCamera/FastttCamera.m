@@ -516,6 +516,10 @@
         [videoConnection setVideoMirrored:(_cameraDevice == FastttCameraDeviceFront)];
     }
     
+    if (videoConnection.enabled == NO) {
+        return;
+    }
+    
 #if TARGET_IPHONE_SIMULATOR
     [self _insertPreviewLayer];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
