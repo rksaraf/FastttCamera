@@ -516,7 +516,7 @@
         [videoConnection setVideoMirrored:(_cameraDevice == FastttCameraDeviceFront)];
     }
     
-    if (videoConnection.enabled == NO) {
+    if (!videoConnection.enabled || !videoConnection.active) {
         return;
     }
     
